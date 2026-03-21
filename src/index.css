@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 42 33% 98%;
+  --foreground: 220 39% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 220 39% 11%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 39% 11%;
+  --primary: 220 70% 18%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 36 70% 92%;
+  --secondary-foreground: 220 39% 11%;
+  --muted: 210 32% 94%;
+  --muted-foreground: 215 16% 38%;
+  --accent: 18 95% 61%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214 22% 88%;
+  --input: 214 22% 88%;
+  --ring: 18 95% 61%;
+  --radius: 1rem;
+}
+
+.dark {
+  --background: 225 31% 8%;
+  --foreground: 210 40% 98%;
+  --card: 226 34% 11%;
+  --card-foreground: 210 40% 98%;
+  --popover: 226 34% 11%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 28 96% 61%;
+  --primary-foreground: 222 47% 11%;
+  --secondary: 224 20% 17%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 223 19% 16%;
+  --muted-foreground: 216 15% 68%;
+  --accent: 190 96% 42%;
+  --accent-foreground: 222 47% 11%;
+  --destructive: 0 70% 47%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 223 18% 18%;
+  --input: 223 18% 18%;
+  --ring: 28 96% 61%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-accent/20 selection:text-foreground;
+    background-image:
+      radial-gradient(circle at top, rgba(255, 122, 48, 0.1), transparent 30%),
+      radial-gradient(circle at 85% 20%, rgba(12, 190, 210, 0.12), transparent 20%);
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight text-balance;
+  }
+
+  p {
+    @apply text-muted-foreground;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply border border-white/10 bg-white/65 shadow-glow backdrop-blur-xl dark:bg-slate-950/55;
+  }
+
+  .section-shell {
+    @apply rounded-[2rem] border border-border/70 bg-card/80 p-6 shadow-glow backdrop-blur md:p-8;
+  }
+
+  .section-label {
+    @apply inline-flex items-center rounded-full border border-border/70 bg-background/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent via-amber-400 to-cyan-400 bg-clip-text text-transparent;
+  }
+}
