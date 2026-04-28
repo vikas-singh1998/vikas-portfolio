@@ -13,7 +13,7 @@ export const siteConfig = {
   email: "vikassingh1415@gmail.com",
   summary:
     " Senior Frontend developer with 5+ years of experience building dynamic, responsive, and user-centric web applications using React, TypeScript, and modern frontend tooling.",
-  location: " India",
+  location: " UP and india",
   experienceYears: 5,
   socialLinks: {
     github: "https://github.com/vikas-singh1998",
